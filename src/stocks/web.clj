@@ -4,7 +4,7 @@
             [environ.core :refer [env]]
             [ring.middleware.reload :refer [wrap-reload]]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [routes.routes :refer [app-routes]]))
+            [stocks.service.routes :refer [app-routes]]))
 
 
 (defn run-dev []
