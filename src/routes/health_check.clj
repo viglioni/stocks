@@ -1,6 +1,5 @@
-(ns routes.health-check)
+(ns routes.health-check
+  (:require [ring.util.http-response :refer [ok]]))
 
 (defn health-check []
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "It's working! It's working!"})
+  (ok "It's working! It's working!\n"))

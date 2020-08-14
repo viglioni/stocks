@@ -1,6 +1,6 @@
-(ns routes.hello-world)
+(ns routes.hello-world
+  (:require [ring.util.http-response :refer [ok]]))
 
 (defn hello-world []
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Hello There"})
+  (ok "Hello There\n"))
+ 

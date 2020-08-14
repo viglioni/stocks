@@ -1,6 +1,5 @@
-(ns routes.not-found)
+(ns routes.not-found
+  (:require [ring.util.response :as resp]))
 
 (defn not-found []
-  {:status 404
-   :headers {"Content-Type" "text/plain"}
-   :body "These aren't the droids you're looking for."})
+  (resp/not-found "These aren't the droids you're looking for.\n"))

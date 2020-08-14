@@ -3,16 +3,17 @@
             [ring.adapter.jetty :as jetty]
             [environ.core :refer [env]]
             [ring.middleware.reload :refer [wrap-reload]]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [routes.routes :refer [app-routes]]))
 
 
 (defn run-dev []
   (println "Running serer in dev mode!")
-  (jetty/run-jetty (wrap-reload #'app-routes)
+  (jetty/run-jetty  (wrap-defaults (wrap-reload #'app-routes) site-defaults)
                    {:port (Integer. (or (env :port) 5000)) :join? false}))
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
-    (jetty/run-jetty (wrap-reload #'app-routes) {:port port :join? false})))
+    (jetty/run-jetty (wrap-defaults #'app-routes) {:port port :join? false})))
 
 
