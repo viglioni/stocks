@@ -14,6 +14,6 @@
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
-    (jetty/run-jetty (wrap-defaults #'app-routes) {:port port :join? false})))
+    (jetty/run-jetty (wrap-defaults #'app-routes site-defaults) {:port port :join? false})))
 
 
