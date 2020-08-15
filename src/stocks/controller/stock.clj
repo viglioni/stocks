@@ -32,3 +32,19 @@
                 :variation (logic/variation page)
                 :stock-id stock-id
                 }))))
+
+(defn curl []
+  (let [result (sh "curl"  "https://www.google.com/search?q=usim5")]
+    (if (= 0 (:exit result))
+      result
+      (throw (RuntimeException.
+              (str "shell-cmd: clojure.java.shell/sh failed. \n"
+                   "exit status:" (:exit result) "\n"
+                   "stderr:"      (:err  result) "\n"
+                   "result:"      (:out  result) "\n"
+                   ))))))
+
+
+(defn stock-test []
+  (let [page (curl)]
+    (resp/ok "curl test")))
