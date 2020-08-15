@@ -1,21 +1,13 @@
 (ns stocks.controller.stock
   (:require [ring.util.http-response :as resp]
             [stocks.logic.stock-info :as logic]
-            [clojure.java.shell :refer [sh]]))
+            [stocks.controller.curl :refer [curl]]
+            [stocks.controller.time :refer [date-and-time-js]]))
 
-
-
-
-(defn stock-page [stock-id]
-  (let [result (sh "curl" "-k" (logic/query stock-id))]
-    (if (= 0 (:exit result))
-      result
-      (throw (RuntimeException.
-              (str "shell-cmd: clojure.java.shell/sh failed. \n"
-                   "exit status:" (:exit result) "\n"
-                   "stderr:"      (:err  result) "\n"
-                   "result:"      (:out  result) "\n"
-                   ))))))
+(defn stock-page
+  "Gets a html page about the stock"
+  [stock-id]
+  (curl (logic/query stock-id)))
 
 
 (defn bad-request []
@@ -25,26 +17,12 @@
 (defn stock-info [stock-id]
   (let [page (stock-page stock-id)]
     (if (logic/stock-not-found page)
-      (resp/not-found "Lost a stock Master Obi-Wan has. How embarrassing.")
+      (resp/not-found "Lost a stock Master Obi-Wan has. How embarrassing.\n")
       (resp/ok {:price (logic/stock-price page)
                 :max (logic/day-max page)
                 :min (logic/day-min page)
                 :variation (logic/variation page)
                 :stock-id stock-id
-                }))))
+                :currency "brl"
+                :time (date-and-time-js)}))))
 
-(defn curl []
-  (let [result (sh "curl"  "https://www.google.com/search?q=usim5")]
-    (if (= 0 (:exit result))
-      result
-      (throw (RuntimeException.
-              (str "shell-cmd: clojure.java.shell/sh failed. \n"
-                   "exit status:" (:exit result) "\n"
-                   "stderr:"      (:err  result) "\n"
-                   "result:"      (:out  result) "\n"
-                   ))))))
-
-
-(defn stock-test []
-  (let [page (curl)]
-    (resp/ok "curl test")))

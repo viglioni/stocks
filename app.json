@@ -1,6 +1,6 @@
 {
-  "name": "Start on Heroku: Clojure",
-  "description": "A barebones Clojure app, which can easily be deployed to Heroku.",
+  "name": "Stocks",
+  "description": "Simple microservice that returns info about a stock",
   "image": "heroku/clojure",
   "addons": [ "heroku-postgresql" ]
 }

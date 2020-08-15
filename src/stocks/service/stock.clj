@@ -6,7 +6,6 @@
   (context
    "/stock" []
    (GET "/" [] (controller/bad-request))
-   (GET "/TEST" [] (controller/stock-test))
    (GET "/:stock-id" [stock-id]
         (controller/stock-info stock-id))
    ))
