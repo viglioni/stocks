@@ -1,6 +1,8 @@
 (defproject stocks "1.0.0-SNAPSHOT"
   :description "Stocks web app"
-  :url "http://stocks.herokuapp.com"
+  :author "Laura Viglioni"
+  :year "2020"
+  :url "https://github.com/Viglioni/stocks"
   :license {:name "Eclipse Public License v1.0"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.10.0"]
@@ -18,4 +20,6 @@
   :hooks [environ.leiningen.hooks]
   :uberjar-name "stocks-standalone.jar"
   :ring {:handler stocks.web/run-dev}
-  :profiles {:production {:env {:production true}}})
+  :main ^:skip-aot stocks.web
+  :profiles {:uberjar {:aot :all}
+             :production {:env {:production true}}})
