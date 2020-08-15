@@ -4,8 +4,8 @@
 ## About
 This project is a simple endpoint that checks some info about a stock and returns it.
 
-### note that
-1. All stock values have 15min of delay
+##### note that
+1. All stock values have 15min of delay.
 2. All currency values are in BRL even non IBOVESPA stocks.
 
 ## API
@@ -35,9 +35,9 @@ will return:
 }
 ```
 
-### note that
-1. Invalid stock ids will get you a 404
-2. Passing no stock id will get you a 500
+##### note that
+1. Invalid stock ids will get you a 404.
+2. Passing no stock id will get you a 500.
 
 
 ## run
@@ -61,19 +61,19 @@ $ java -jar ./executable/stocks-standalone.jar
 ```sh
 $ lein repl
 user=> (require 'stocks.web)
-user=>(def server (stocks.web/run-dev))
+user=> (def server (stocks.web/run-dev))
 ```
 
 #### run 
 ```sh
 $ lein repl
 user=> (require 'stocks.web)
-user=>(def server (stocks.web/-main))
+user=> (def server (stocks.web/-main))
 ```
 
 #### stop server
 ```sh
-user=>(.stop server)
+user=> (.stop server)
 ```
 
 Your app should now be running on [localhost:4666](http://localhost:4666/).
