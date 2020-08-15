@@ -7,7 +7,7 @@
 
 
 (defn stock-page [stock-id]
-  (let [result (sh "curl" (logic/query stock-id))]
+  (let [result (sh "curl" "-k" (logic/query stock-id))]
     (if (= 0 (:exit result))
       result
       (throw (RuntimeException.
