@@ -10,7 +10,8 @@
                  [ring/ring-defaults "0.3.2"]
                  [metosin/ring-http-response "0.9.1"]
                  [clj-time "0.15.2"]
-                 [environ "1.1.0"]]
+                 [environ "1.1.0"]
+                 [ring/ring-json "0.5.0"]]
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.3.1"]
             [lein-ring "0.12.5"]]

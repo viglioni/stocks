@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head> 
+
+<!-- Metas -->
+<meta charset="UTF-8" />
+
+<!-- Links -->
+<link href="/Content/Css/template.css" rel="Stylesheet" type="text/css">
+<link href="/Content/Css/restricted.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+<!--[if lte IE 8]>
+    <link href="/Content/Css/restricted.ie.css" rel="stylesheet" type="text/css">
+    <link href="/Content/Css/template.ie.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+<!-- Scripts -->
+
+<script type="text/javascript">window.path = "/";</script>
+<script type="text/javascript" src="/Scripts/jquery.js"></script>
+
+  <script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/Plugins/jquery.plugins.js?v=132413004620000000'></script><script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/Minified/Popup.min.js?v=132413004620000000'></script>
+ 
+
+ <!--[if lte IE 8]>
+    <script type="text/javascript" src="/Scripts/itau.interface.ie.js"></script>
+<![endif]-->
+
+
+<script type="text/javascript">
+    if (!window.user) {
+        window.user = {
+            nivel: '',
+            nome: '',
+            logado: 'false'
+        };        
+    }
+</script>
+<script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/SubscriptionManagerDefault.js?v=132413004620000000'></script><script type='text/javascript' src='https://www.itaucorretora.com.br/streamer/_stream.js.aspx?v=132413004620000000'></script><script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/StreamerFormat.js?v=132413004620000000'></script><script type='text/javascript'>var subscription = new SubscriptionManager();</script>
+<script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/Views/Finder/FinderDesl.js?v=132413004620000000'></script>
+    <script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/GraficoLinha.js?v=132413004620000000'></script>
+    <!--[if lte IE 8]><script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/Plugins/dygraphs/excanvas.js?v=132413004620000000'></script><![endif]-->
+    <script type='text/javascript' src='https://ww1.itaucorretora.com.br/Scripts/Plugins/dygraphs/dygraph-combined.js?v=132413004620000000'></script>
+    
+ 
+
+
+
+<!-- Outros -->
+<title>
+	Busca de cotações - Itaú Corretora
+</title>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+_gaq.push(['_setAccount', 'UA-37546408-1']);
+_gaq.push(['_trackPageview', location.pathname + location.search + location.hash]); //isso faz pegar os tralhas
+
+
+//para gravar links externos
+function recordOutboundLink(link, category, action) {
+    try {
+        var myTracker = _gat._getTrackerByName();
+        _gaq.push(['myTracker._trackEvent', category, action]);
+        setTimeout('document.location = "' + link.href + '"', 100)
+    } catch (err) { }
+}
+
+(function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+</head>
+
+<body id="pagina-finder-finder" class="pagina-popup pagina-finder pagina-finder">    
+
+
+<!--
+Máquina: SIWTP0126CLD
+Hora de compilação: 07/08/2020 16:01:02
+Hora de geração da página: 13/08/2020 18:17:33
+-->
+<input type="hidden" id="addCockpitHidden" data-nome="Finder" data-verifica="s" value="Finder" />
+    <form action="/Finder/Finder" id="FormFinder" method="post">
+    <div class="topo">
+        <h1>
+            Itaú Corretora</h1>
+        <div class="pesquisa-cotacao">
+           
+            <input type="text" id="txt-ativo" name="cotacao" value="fail" class="" />
+            <div class='btn primario ok'><input type='submit' class='_checkCode' id='busca-ativo' name='Ok' value='Ok' /></div>
+        </div>
+        <span class="quebra-linha"></span>
+    </div>
+    <div class="conteudo">
+		<ul class="opcoes">
+			<li class="adicionar-aocp"><a onclick="_gaq.push(['_trackEvent', 'Interações','Adicionar Widget', window.location.pathname + '/Widget ' + $('#addCockpitHidden').val()]);" href='javascript:void(0);' style='display:none;' id='addCockpit' class='adicionar-aocp'><span class='ico'></span>Adicionar ao cockpit</a><span style='display:none;' class='adicionado-aocp' id='inCockpit'>Widget adicionado</span></li>
+			<li id="nova-janela"><a hideFocus='true' class='btn secundario nova-janela' onclick= "_gaq.push(['_trackEvent', 'Interações','Abrir nova janela','Finder']);"  href='javascript:;'>Nova janela</a></li>
+		</ul>
+		<ul class="abasAcoesOpcoes">
+			<li id="tabPaper" class='active'><a href="javascript:void(0);" id="lnkPaper" onclick="_gaq.push(['_trackPageview', '/Finder/Ações']);">Ações</a></li>
+			<li id="tabOption" ><a href="javascript:void(0);" id="lnkOption" onclick="_gaq.push(['_trackPageview', '/Finder/Opções']);">Opções</a></li>
+		</ul>
+        <div class="dados-ativo" id="conteudo">
+			<input id="hddTotalStock" name="hddTotalStock" type="hidden" value="0" />
+<input id="hddPageLength" name="hddPageLength" type="hidden" value="" />
+<input id="hddPageIndex" name="hddPageIndex" type="hidden" value="0" />
+<input id="hddCurrentPage" name="hddCurrentPage" type="hidden" value="" />
+<input id="hddStockType" name="hddStockType" type="hidden" value="0" />
+
+
+<span class="quebra-linha"></span>
+<table id="tab-result-search">
+	<thead>
+		<tr>
+			<th class="dados">
+				Código
+			</th>
+			<th class="dados">
+				Nome do ativo
+			</th>
+		</tr>
+	</thead>
+	<!-- Tabela com resultado da busca no Finder -->
+	<tbody>
+		
+		<tr>
+			<td class="aviso" colspan="9">
+				<p>
+					Não foram encontrados ativos para sua busca.</p>
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<span class="quebra-linha"></span>
+		</div>
+    </div>
+    <div class="rodape" id="rodape">
+    
+        <p>
+            Defasagem de 15 minutos. Para acessar as cotações online, faça seu login.</p>
+    
+        <h4>
+            Confira na Itaú Corretora:</h4>
+        <ul>
+        
+            
+
+            <li><a class="link-rodape-finder" href="javascript:void(0);" data-url="NossosServicos/compra-programada.aspx" onclick="_gaq.push(['_trackEvent', 'Conteúdos','Compra programada','Finder']);">Compra programada</a></li>
+            <li><a class="link-rodape-finder" href="javascript:void(0);" data-url="NossosServicos/pagina-da-empresa.aspx" onclick="_gaq.push(['_trackEvent', 'Conteúdos','Página da empresa','Finder']);">Página da empresa</a></li>
+            <li><a class="link-rodape-finder" href="javascript:void(0);" data-url="NossosServicos/recomendacoes-de-investimento.aspx" onclick="_gaq.push(['_trackEvent', 'Conteúdos','Recomendação de investimento','Finder']);">Recomendação de investimento</a></li>
+
+            
+        </ul>        
+    </div>
+    </form>
+    
+</body>
+</html>
