@@ -6,7 +6,8 @@ This project is a simple endpoint that checks some info about a stock and return
 
 ### note that
 1. All stock values have 15min of delay
-2. All currency values are in BRL even non IBOVESPA stocks.
+2. All currency values are in BRL.
+3. For now only IBOVESPA stocks.
 
 ## API
 
@@ -14,12 +15,12 @@ This project is a simple endpoint that checks some info about a stock and return
 |-------------------|--------------|--------------|--------|-------------|
 | "/"               | Hello World  | GET          | str    | 200         |
 | "/health-check"   | Health Check | GET          | str    | 200         |
-| "/stock:stock-id" | Stock        | GET          | json   | 200         |
+| "/ibov:stock-id"  | Stock        | GET          | json   | 200         |
 
 ### Example
 
 ```sh
-$  curl http://localhost:4666/stock/petr4
+$  curl http://localhost:4666/ibov/petr4
 ```
 
 will return:

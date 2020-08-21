@@ -1,13 +1,13 @@
-(ns stocks.logic.stock-info
+(ns stocks.logic.itau
   (:require [clojure.string :refer [replace]]))
 
 
 (def url-base  "https://www.itaucorretora.com.br/Finder/Finder?stock=")
 (def number-base "[0-9\\.]+,[0-9]{2}")
 (def signed-number-with-per (str "-?" number-base "%"))
-(def not-found-pattern "Não foram encontrados ativos para sua busca")
+(def stock-found-pattern #"id=\\\"dados-ativo\\\"")
 (defn day-var-pattern [x]
-  (str "id=[\\\\\\\"]*" x "[\\\\\\\"]*>" number-base "</strong>"))
+  (str #"id=[\\\"]*" x #"[\\\"]*>" number-base "</strong>"))
 (def day-max-pattern (day-var-pattern "maximo"))
 (def day-min-pattern (day-var-pattern "minimo"))
 
@@ -31,8 +31,8 @@
 (defn stock-not-found
   "Checks if the stock given is valid"
   [html]
-  (let [not-found-text (re-find (re-pattern not-found-pattern) (str html))]
-    (if not-found-text true nil)))
+  (let [stock-found-text (re-find (re-pattern stock-found-pattern) (str html))]
+    (if stock-found-text nil true)))
 
 ;;
 ;; Applying regex-qry to get all the info the endpoint needs

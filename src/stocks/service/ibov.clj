@@ -1,10 +1,10 @@
-(ns stocks.service.stock
+(ns stocks.service.ibov
   (:require [compojure.core :refer [context GET]]
-            [stocks.controller.stock :as controller]))
+            [stocks.controller.ibov :as controller]))
 
-(def stock
+(def ibov
   (context
-   "/stock" []
+   "/ibov" []
    (GET "/" [] (controller/bad-request))
    (GET "/:stock-id" [stock-id]
         (controller/stock-info stock-id))

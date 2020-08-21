@@ -1,6 +1,6 @@
-(ns stocks.controller.stock
+(ns stocks.controller.ibov
   (:require [ring.util.http-response :as resp]
-            [stocks.logic.stock-info :as logic]
+            [stocks.logic.itau :as logic]
             [stocks.controller.curl :refer [curl]]
             [stocks.controller.time :refer [date-and-time-js]]))
 
