@@ -25,6 +25,6 @@
   :uberjar-name "stocks-standalone.jar"
   :ring {:handler stocks.web/run-dev}
   :main ^:skip-aot stocks.web
-  :aliases {"dev" ["shell" "sh" "scripts/test_dev.sh"]}
+  :aliases {"test:watch" ["shell" "sh" "scripts/test_dev.sh"]}
   :profiles {:uberjar {:aot :all}
              :production {:env {:production true}}})
