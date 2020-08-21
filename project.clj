@@ -13,13 +13,18 @@
                  [metosin/ring-http-response "0.9.1"]
                  [clj-time "0.15.2"]
                  [environ "1.1.0"]
+                 [org.clojure/data.json "1.0.0"]
+                 [ring/ring-mock "0.4.0"]
                  [ring/ring-json "0.5.0"]]
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.3.1"]
-            [lein-ring "0.12.5"]]
+            [lein-ring "0.12.5"]
+            [lein-shell "0.5.0"]
+            [lein-exec "0.3.7"]]
   :hooks [environ.leiningen.hooks]
   :uberjar-name "stocks-standalone.jar"
   :ring {:handler stocks.web/run-dev}
   :main ^:skip-aot stocks.web
+  :aliases {"dev" ["shell" "sh" "scripts/test_dev.sh"]}
   :profiles {:uberjar {:aot :all}
              :production {:env {:production true}}})
