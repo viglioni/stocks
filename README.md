@@ -86,7 +86,7 @@ Run all tests
 $ lein test
 ```
 
-Run tests in watch mode
+Run tests in watch mode (you must have [fswatch](https://github.com/emcrisostomo/fswatch) installed)
 ```shell
 $ lein test:watch
 ```
