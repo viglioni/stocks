@@ -12,7 +12,7 @@ do
   then
     clear
     lein test :only $file
-    echo "\n\n\n\n"
+    echo "\n\n"
     echo "Running tests watch mode"
   fi
 done
