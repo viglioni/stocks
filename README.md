@@ -79,6 +79,18 @@ user=> (.stop server)
 
 Your app should now be running on [localhost:4666](http://localhost:4666/).
 
+## test
+
+Run all tests
+```shell
+$ lein test
+```
+
+Run tests in watch mode
+```shell
+$ lein test:watch
+```
+
 ## :)
 I hope this can be useful for anyone. 
 In the future I may create a new endpoint that returns in USD.
